@@ -38,7 +38,7 @@ RUN apt-get install -qy --force-yes mono-runtime \
                                 emby-server && \
     apt-get clean -y
 
-
+RUN find /etc/container_environment -type f -print0 | xargs -0 chmod +r && find /etc/container_environment -type d -print0 | xargs -0 chmod +rx
 
 #########################################
 ##        ENVIRONMENTAL CONFIG         ##
